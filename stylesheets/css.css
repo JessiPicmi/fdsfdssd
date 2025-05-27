@@ -1,0 +1,206 @@
+:root{
+  --clr-primary: #00e5ff;
+  --clr-secondary:#ffde59;
+  --bg-dark: rgba(25,25,25,.85);
+  --text-light:#ffffff;
+  --radius:20px;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  min-height:100vh;
+  margin:0;
+  font-family:'Orbitron',sans-serif;
+  color:var(--text-light);
+  display:flex;
+  flex-direction:column;
+  /* фон: изображение + затемняющий градиент */
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+    url("../images/virus.jpg") center/cover no-repeat;
+}
+
+.gamecontainer {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+canvas {
+  background: #000000;
+  background: linear-gradient(#252525, #252525);
+  border: 2px solid #FFFFFF;
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 0px;
+}
+
+.controls {
+  min-width: 250px;
+  max-width: 250px;
+  /* height: 360px; */
+  background: rgba(25, 25, 25, 0.9);
+  border-radius: 20px;
+  padding: 0px 20px;
+}
+
+.information {
+  min-width: 250px;
+  max-width: 250px;
+  height: 150px;
+  background: rgba(25, 25, 25, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+}
+button:hover{
+  cursor: pointer;
+  outline: none;
+}
+
+.swang-links {
+  position: relative;
+  /* top: 25px; */
+  left: 150px;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: #FFFFFF;
+}
+a:visited { text-decoration: none; color:#FFFFFF; }
+a:hover { text-decoration: none; color:#0074BB; }
+a:hover, a:active { text-decoration: none; color:#0074BB }
+
+#mute {
+  border-radius: 5px;
+  min-width: 20px;
+  min-height: 20px;
+  position: relative;
+  bottom: 5px;
+}
+
+/* --- игровой блок --- */
+.gamecontainer{
+  flex:1;
+  width:100%;
+  max-width:1400px;
+  margin:auto;
+  padding:20px;
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;     /* мобильная адаптация */
+}
+
+/* «стеклянные» карточки */
+.panel{
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  background:var(--bg-dark);
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 4px 20px rgba(0,0,0,.6);
+  border-radius:var(--radius);
+  padding:25px;
+  transition:transform .3s;
+}
+.panel:hover{transform:translateY(-4px);}
+
+.controls{width:260px}
+.information{
+  width:260px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  text-align:center;
+}
+
+canvas{
+  background:#000;
+  border:3px solid var(--clr-primary);
+  border-radius:var(--radius);
+  box-shadow:0 0 10px var(--clr-primary);
+}
+
+/* заголовок с «неоном» */
+h1{
+  text-align:center;
+  margin:10px 0 20px;
+  font-size:28px;
+  color:var(--clr-secondary);
+  text-shadow:0 0 6px var(--clr-secondary),0 0 10px var(--clr-secondary);
+}
+
+/* списки контролов */
+.controls ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 15px;
+  line-height:1.6;
+  font-size:18px;
+}
+.controls li i{margin-right:8px;color:var(--clr-primary);}
+
+/* тексты уровней/счёта */
+.information h2{
+  margin:0;
+  font-size:22px;
+}
+
+/* кнопка mute */
+#mute{
+  margin:12px auto 0;
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:8px;
+  background:var(--clr-primary);
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  transition:transform .2s,background .2s;
+}
+#mute:hover{cursor:pointer;transform:scale(1.15);}
+#mute:focus{outline:none;}
+
+/* ссылки */
+a{color:var(--clr-primary);text-decoration:none;}
+a:hover{color:var(--clr-secondary);}
+
+/* футер */
+.footer{
+  text-align:center;
+  padding:12px 8px;
+  font-size:14px;
+  background:#111;
+  color:#888;
+}

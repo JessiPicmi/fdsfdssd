@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Dr Mario JS</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/swangs/drmariojs/master/images/Virus-128.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114133598-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-114133598-1');
+    </script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/css.css">
+  </head>
+
+ <body>
+  <!-- ↑ всё что было в <head> оставляем без изменений -->
+
+  <audio id="movepill" src="sounds/movepill.mp3"></audio>
+  <audio id="rotatepill" src="sounds/rotatepill.mp3"></audio>
+  <audio id="eatblocks" src="sounds/eatblocks.mp3"></audio>
+  <audio id="levelclear" src="sounds/levelclear.mp3"></audio>
+  <audio id="gameover" src="sounds/gameover.mp3"></audio>
+  <audio id="bgm" src="sounds/bgm.mp3" loop></audio>
+
+  <div class="gamecontainer">
+    <section class="panel controls">
+      <h1>Controls</h1>
+      <ul>
+        <li><i class="fas fa-arrow-left"></i> Left – ←</li>
+        <li><i class="fas fa-arrow-right"></i> Right – →</li>
+        <li><i class="fas fa-arrow-down"></i> Down – ↓</li>
+        <li><i class="fas fa-undo"></i> Rotate L – Z</li>
+        <li><i class="fas fa-redo"></i> Rotate R – X</li>
+        <li><i class="fas fa-pause"></i> Pause – Space</li>
+      </ul>
+      <p>Destroy as many viruses as you can by creating rows or columns of 4+ matching colors.</p>
+    </section>
+
+    <canvas></canvas>
+
+    <section class="panel information">
+      <h2 id="level"></h2>
+      <h2 id="score"></h2>
+      <h2 id="virus"></h2>
+
+      <button id="mute" title="Mute / Unmute">
+        <i id="muteicon" class="fas fa-volume-up"></i>
+      </button>
+    </section>
+  </div>
+
+  <footer class="footer">
+    © 2025 Максим Резниченко.
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="lib/keymaster.js"></script>
+  <script src="lib/bundle.js"></script>
+</body>
+</html>
